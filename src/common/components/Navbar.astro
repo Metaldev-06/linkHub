@@ -1,0 +1,78 @@
+---
+
+---
+
+<nav class="navbar__container">
+  <a href="/">
+    <img src="./images/logo.webp" alt="Logo Diaz Servicios SRL" />
+  </a>
+
+  <!-- <button>
+    <Icon name="menu" class:list={["menu__icon"]} />
+    <span></span>
+  </button> -->
+  <a href="/">
+    <img src="./images/logo-aca.webp" alt="Logo Automovil Club Argentino" />
+  </a>
+</nav>
+
+<style>
+  .navbar__container {
+    width: 90%;
+    height: 80px;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    border-radius: 50px;
+    position: sticky;
+    top: 1rem;
+    animation: enhanced-nav linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 200px;
+
+    img {
+      width: clamp(50px, 70px, 80px);
+      border-radius: 50%;
+    }
+
+    button {
+      position: relative;
+      background-color: transparent;
+      border: none;
+      outline: none;
+
+      .menu__icon {
+        font-size: 1rem;
+        width: 44px;
+        height: 44px;
+        cursor: pointer;
+        color: white;
+
+        &:hover {
+          color: #f5f5f5;
+        }
+      }
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 0.6rem;
+        background-color: black;
+        z-index: -1;
+      }
+    }
+  }
+
+  @keyframes enhanced-nav {
+    to {
+      background-color: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(5px);
+      outline: 1px solid rgba(253, 253, 253, 0.4);
+    }
+  }
+</style>

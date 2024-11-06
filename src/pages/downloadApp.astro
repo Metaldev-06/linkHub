@@ -1,0 +1,13 @@
+---
+import Header from "../common/components/Header.astro";
+import Links from "../common/components/Links.astro";
+import Social from "../common/components/Social.astro";
+import { linksApp, socials } from "../data/data";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout title="Descarga la App">
+  <Header />
+  <Links links={linksApp} />
+  <Social socials={socials} />
+</Layout>

@@ -1,0 +1,57 @@
+---
+import { Icon } from "astro-icon/components";
+import type { Social } from "../interfaces";
+
+interface Props {
+  socials: Social[];
+}
+
+const { socials } = Astro.props;
+---
+
+<section class="social__container">
+  {
+    socials.map((social: Social) => (
+      <a
+        href={social.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        title={social.title}
+      >
+        <Icon name={social.icon} class:list={["social__icon"]} />
+      </a>
+    ))
+  }
+</section>
+
+<style>
+  .social__container {
+    width: 100%;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    a {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+      border-radius: 50%;
+      color: black;
+
+      .social__icon {
+        width: 20px;
+        height: 20px;
+      }
+
+      &:hover {
+        background-color: #f5f5f5;
+      }
+    }
+  }
+</style>
